@@ -1,0 +1,5 @@
+en:
+  contact_us: Contact us
+  notifications:
+    contact_us_mail:
+      subject: "[AcidIT][Contact] New message from %{user}"
