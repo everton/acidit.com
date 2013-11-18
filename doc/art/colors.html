@@ -3,92 +3,221 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>acitit.com - colors</title>
+    <title>acidit.com - colors</title>
 
-    <style type="text/css"  rel="stylesheet" >
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript">
     <!--
-        body {
-          background: #30292C;
-          color: #6F7592;
-          font-size: 16px;
-        }
+      setInterval(function(){
+        var allHighlights = document.querySelectorAll(".highlight");
 
-        h1 { color: #A36E2E; }
-        h2 { color: #A36E2E; }
+        for(var i = 0; i < allHighlights.length; ++i) {
+          var h = allHighlights[i];
+          var r = Math.floor((Math.random()*3)+1);
 
-        #inspiration, #main_colors, #neon_colors, #example {
-          position: relative;
-          width: 960px;
-          margin: 0 auto;
+          if(r == 3) {
+            h.style.color = "white";
+          } else {
+            h.style.color = "#FFDBDB";
+          }
         }
-
-        #main_colors, #neon_colors {
-          background: white;
-          overflow: auto;
-          padding-bottom: 30px;
-        }
-
-        #main_colors .palette {
-          margin: 0 30px;
-        }
-
-        #main_colors #proportional_palette {
-          float: left;
-          width: 260px;
-        }
-
-        #main_colors #hex_main_palette {
-          float: right;
-          width: 580px;
-        }
-
-        #main_colors #hex_main_palette table {
-          width: 100%;
-        }
-
-        .palette table {
-          border-collapse: collapse;
-        }
-
-        .palette table tr {
-          border: 5px solid #FFF;
-        }
-
-        .palette table th, .palette table td {
-          padding: 10px;
-        }
-
-        #neon_colors .palette {
-          margin: 0 30px;
-        }
-
-        #example {
-        }
-
-        .highlight {
-          color: white;
-          text-shadow:
-            0 0  10px white,
-            0 0  20px white,
-            0 0  30px white,
-            0 0  40px #FF00FF,
-            0 0  70px #FF00FF,
-            0 0  80px #FF00FF,
-            0 0 100px #FF00FF,
-            0 0 150px #FF00FF;
-        }
+      }, 500);
     //-->
-    </style>
+    </script>
+
+    <script type="text/javascript">
+    <!--
+      var smoothScroll = function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      };
+
+      $(document).ready(smoothScroll);
+      $(document).on('page:load', smoothScroll);
+    //-->
+    </script>
+
+    <link href="./normalize.css" type="text/css"  rel="stylesheet" />
+    <link href="./colors.css" type="text/css"  rel="stylesheet" />
   </head>
   <body>
-    <section id="inspiration">
-      <h1>Inspiration</h1>
+    <header>
+      <div class="content_wrapper">
+        <h1><a href="http://acidit.com">acidit</a></h1>
 
-      <img src="./hong_kong.jpg" alt="Hong Kong" style="width: 960px;" />
+        <nav>
+          <a href="#main_content">main</a>
+          <a href="#main_colors" >structural colors</a>
+          <a href="#neon_colors" >neon colors</a>
+          <a href="#inspiration" >inspiration</a>
+          <a href="#example"     >example</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="main_content">
+      <h1>This is the visual style guide for acidit.com</h1>
+
+      <p>
+        The rules following are just the initial visual project and
+        inspiration, they imply not in rules but in general suggestions
+        which should evolute when new elements are inserted into the
+        site layout.
+      </p>
+
+      <p>
+        The proposed styles are applyed on the guide itself, so references
+        can be found on the CSS of this same page.
+      </p>
     </section>
 
     <section id="main_colors">
       <h1>Color Palette - Structural Colors</h1>
+
+      <div id="hex_main_palette" class="palette" >
+        <h2>Hex Palette</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Color</th>
+              <th>Hex</th>
+              <th>Color Name (internal)</th>
+              <th>Suggested Usage</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="background-color: #C6E808;" class="color-square"></td>
+              <td class="hex-color">#C6E808</td>
+              <td class="color-name">Lamps</td>
+              <td class="usage">Titles</td>
+              <td class="notes" ></td>
+            </tr>
+            <tr>
+              <td style="background-color: #120D1E;" class="color-square"></td>
+              <td class="hex-color">#120D1E</td>
+              <td class="color-name">Sky</td>
+              <td class="usage">Background</td>
+              <td class="notes">Use with linear gradient to black</td>
+            </tr>
+            <tr>
+              <td style="background-color: #6F7592;" class="color-square"></td>
+              <td class="hex-color">#6F7592</td>
+              <td class="color-name">Dust</td>
+              <td class="usage">Regurlar text, Title borders</td>
+              <td class="notes">Helvetica, Arial, sans-serif</td>
+            </tr>
+            <tr>
+              <td style="background-color: #15ABC3;" class="color-square"></td>
+              <td class="hex-color">#15ABC3</td>
+              <td class="color-name">Tron</td>
+              <td class="usage">Form elements</td>
+              <td class="notes">"Bitstream Vera Sans Mono", monospace</td>
+            </tr>
+            <tr>
+              <td style="background-color: #FF0000;" class="color-square"></td>
+              <td class="hex-color">#FF0000</td>
+              <td class="color-name">Error</td>
+              <td class="usage">Invalid form elements</td>
+              <td class="notes">"Bitstream Vera Sans Mono", monospace</td>
+            </tr>
+            <tr>
+              <td style="background-color: #00CC00;" class="color-square"></td>
+              <td class="hex-color">#00CC00</td>
+              <td class="color-name">Matrix</td>
+              <td class="usage">Links</td>
+              <td class="notes">"Bitstream Vera Sans Mono", monospace</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="hex_main_neon_palette" class="palette" >
+        <h2>Hex Neon Palette - Shadow layers</h2>
+
+        <a href="http://http://www.fontspace.com/juan-e-b">Neon Lights truetype font</a>
+
+        <pre style="color: white;">
+          @font-face {
+            font-family: "neon";
+            src: url("./NEON LIGHTS.ttf") format("truetype");
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+
+          .highlight {
+            font-family: neon;
+            color: #FFDBDB;      <span style="background-color: #FFDBDB;">&nbsp;&nbsp;</span>
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow:
+              0 0   3px white,   <span style="background-color: white;"  >&nbsp;&nbsp;</span>
+              0 0  10px #FFDBDB, <span style="background-color: #FFDBDB;">&nbsp;&nbsp;</span>
+              0 0  20px #FE0001, <span style="background-color: #FE0001;">&nbsp;&nbsp;</span>
+              0 0  30px #FE0001, <span style="background-color: #FE0001;">&nbsp;&nbsp;</span>
+              0 0  40px #FE0001, <span style="background-color: #FE0001;">&nbsp;&nbsp;</span>
+              0 0  50px #FFDBDB, <span style="background-color: #FFDBDB;">&nbsp;&nbsp;</span>
+              0 0  60px #FFDBDB, <span style="background-color: #FFDBDB;">&nbsp;&nbsp;</span>
+              0 0 100px #FFDBDB; <span style="background-color: #FFDBDB;">&nbsp;&nbsp;</span>
+          }
+
+          .highlight_blue {
+            font-family: neon;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;        <span style="background-color: white;"  >&nbsp;&nbsp;</span>
+            text-shadow:
+              0 0   1px white,   <span style="background-color: white;"  >&nbsp;&nbsp;</span>
+              0 0  10px #4D4DFF, <span style="background-color: #4D4DFF;">&nbsp;&nbsp;</span>
+              0 0  20px #D1FAFD, <span style="background-color: #D1FAFD;">&nbsp;&nbsp;</span>
+              0 0  30px #D1FAFD, <span style="background-color: #D1FAFD;">&nbsp;&nbsp;</span>
+              0 0  40px #4D4DFF, <span style="background-color: #4D4DFF;">&nbsp;&nbsp;</span>
+              0 0  50px #4D4DFF; <span style="background-color: #4D4DFF;">&nbsp;&nbsp;</span>
+          }
+        </pre>
+      </div>
+    </section>
+
+    <section id="inspiration">
+      <h1>Inspiration</h1>
+
+      <p>
+        The main theme inspiration was the most urban scenarios around the
+        current world and some distopic futuristics components from fictional
+        Cyberpunk stories.
+      </p>
+
+      <p>
+        The background and text colors are extracted or manipulated from colors
+        of a night shot of Hong Kong city.
+      </p>
+
+      <img src="./hong_kong.jpg" alt="Hong Kong" style="width: 960px;" />
+
+      <p>
+        Highlighted content must be created through usage of "neon effects".
+      </p>
+
+      <p>
+        Form epxerience mimics the visual identity of Tron movie.
+      </p>
+    </section>
+
+    <section id="inspiration_colors">
+      <h1>Color Palette - Insparation Colors</h1>
 
       <p>
         Thanks: <a href="http://labs.tineye.com/">http://labs.tineye.com/</a>
@@ -106,7 +235,7 @@
         <div style="height: 3.0px;   background-color: #a36e2e" class="color-row"></div>
       </div>
 
-      <div id="hex_main_palette" class="palette" >
+      <div id="hex_inspiration_palette" class="palette" >
         <h2>Hex Palette</h2>
 
         <table>
@@ -185,7 +314,7 @@
             <tr>
               <th>Color</th>
               <th>Hex</th>
-              <th>Closest Color Name</th>
+              <th>Color Name</th>
             </tr>
           </thead>
           <tbody>
@@ -232,13 +361,50 @@
     <section id="example">
       <h1>Examples</h1>
 
+      <p style="padding: 20px; text-align: center;">
+        <span class="highlight" style="font-size: 36px">Lorem Ipsum</span>
+      </p>
+
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget orci vulputate, viverra lacus ut, tincidunt risus. Quisque at dui laoreet, convallis diam vitae, eleifend purus. Vestibulum sapien nulla, cursus ac lectus sit amet, hendrerit vestibulum ante. Nunc scelerisque ultrices bibendum. Duis scelerisque nulla ut pharetra hendrerit. Sed placerat sodales ante, quis scelerisque lectus luctus a. Vivamus ullamcorper purus sed nulla feugiat suscipit. Cras dignissim lobortis consequat. Proin non semper augue, in eleifend mauris. Mauris metus lorem, accumsan sit amet molestie id, pulvinar vel magna. Pellentesque ac tristique sem. Sed laoreet, massa at tristique elementum, quam lectus elementum arcu, rhoncus pharetra risus nibh eget turpis. In dictum massa sed venenatis tincidunt. Sed luctus nibh vehicula tortor blandit condimentum. Etiam rutrum velit sit amet massa interdum sollicitudin.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget orci vulputate, viverra lacus ut, tincidunt risus. Quisque at dui laoreet, convallis diam vitae, eleifend purus. Vestibulum sapien nulla, cursus ac lectus sit amet, hendrerit vestibulum ante. Nunc scelerisque ultrices bibendum. Duis scelerisque nulla ut pharetra hendrerit. Sed placerat sodales ante, quis scelerisque lectus luctus a. Vivamus ullamcorper purus sed nulla feugiat suscipit. Cras dignissim lobortis consequat. Proin non semper augue, in eleifend mauris. Mauris metus lorem, accumsan sit amet molestie id, pulvinar vel magna. Pellentesque ac tristique sem. Sed laoreet, massa at tristique elementum, quam lectus elementum arcu, rhoncus pharetra risus nibh eget turpis. <span class="highlight_blue">In dictum massa sed venenatis tincidunt</span>. Sed luctus nibh vehicula tortor blandit condimentum. Etiam rutrum velit sit amet massa interdum sollicitudin.
       </p>
 
       <p>
         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras vitae erat eu neque <span class="highlight">volutpat venenatis in ac sapien</span>. Sed rutrum mauris sed nulla sodales scelerisque. Integer ullamcorper vulputate scelerisque. Etiam vestibulum varius mattis. Suspendisse consequat mi a risus vehicula fermentum. Morbi mollis sapien sapien. Nulla a odio sed erat lacinia dapibus eu vitae diam. In fringilla neque imperdiet, iaculis sem vehicula, malesuada dolor. Proin ut ligula tempus, cursus urna eget, gravida lectus. Fusce tempus mi nec facilisis cursus.
       </p>
+
+      <form>
+        <h2>A Form example</h2>
+
+        <fieldset>
+          <legend>Your contact information</legend>
+
+          <p>
+            Your <label for="email">email</label>
+            <input  id="email" type="email"  />
+          </p>
+
+          <p>
+            Your <label for="message">message</label>
+            <textarea id="message" name="message" placeholder="Describe your project here"></textarea>
+          </p>
+        </fieldset>
+
+        <fieldset class="actions">
+          <legend>Actions</legend>
+
+          <p>
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Send" />
+          </p>
+        </fieldset>
+      </form>
     </section>
+
+    <footer>
+      <div class="content_wrapper">
+        <a href="mailto:eveton.carpes@gmail.com">Everton J. Carpes</a>
+      </div>
+    </footer>
   </body>
 </html>

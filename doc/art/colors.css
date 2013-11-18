@@ -1,0 +1,308 @@
+@font-face {
+  font-family: "neon";
+  // src: url('./zebra_01-49-58.ttf');
+  // src: url("./Neon80s.ttf") format("truetype");
+  src: url("./NEON LIGHTS.ttf") format("truetype");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background: #120D1E;
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.58, #120D1E),
+    color-stop(1,    #000000)
+  );
+  background-image: -o-linear-gradient(bottom,      #120D1E 58%, #000000 100%);
+  background-image: -moz-linear-gradient(bottom,    #120D1E 58%, #000000 100%);
+  background-image: -webkit-linear-gradient(bottom, #120D1E 58%, #000000 100%);
+  background-image: -ms-linear-gradient(bottom,     #120D1E 58%, #000000 100%);
+  background-image: linear-gradient(to bottom,      #120D1E 58%, #000000 100%);
+
+  color: #6F7592;
+  font-size: 16px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.3em;
+}
+
+h1 { color: #C6E808; border-bottom: 1px solid #6F7592; padding: 80px 0 15px 0; margin: 0; }
+h2 { color: #C6E808; }
+
+a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #00CC00;
+}
+
+a:hover {
+  text-shadow: 0px 0px 2px #00CC00;
+  // font-weight: bold;
+}
+
+/* header { */
+/*   position: fixed; */
+/*   top: 0; */
+/*   left: 0; */
+/*   right: 0; */
+/*   width: 960px; */
+/*   margin: 0 auto; */
+/*   padding: 10px 0; */
+/*   z-index: 9999; */
+/*   background: #120D1E; */
+/*   border-bottom: 1px solid #6F7592; */
+/* } */
+
+header {
+  position: fixed;
+  top:   0;
+  left:  0;
+  right: 0;
+  z-index: 9999;
+  background: #120D1E;
+  border-bottom: 1px solid #6F7592;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+header h1 a {
+  color: #6F7592;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+header h1 a:hover {
+  text-shadow: none;
+}
+
+header nav {
+  position: absolute;
+  top: 11px;
+  right: 0;
+}
+
+header nav a {
+  margin: 0 0 0 15px;
+}
+
+footer {
+  background: #120D1E;
+  border-top: 1px solid #6F7592;
+  margin-top: 60px;
+}
+
+.content_wrapper {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.highlight {
+  font-family: neon;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFDBDB;
+  text-shadow:
+    0 0   3px white,
+    0 0  10px #FFDBDB,
+    0 0  20px #FE0001,
+    0 0  30px #FE0001,
+    0 0  40px #FE0001,
+    0 0  50px #FFDBDB,
+    0 0  60px #FFDBDB,
+    0 0 100px #FFDBDB;
+}
+
+.highlight_blue {
+  font-family: neon;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-shadow:
+    0 0   1px white,
+    0 0  10px #4D4DFF,
+    0 0  20px #D1FAFD,
+    0 0  30px #D1FAFD,
+    0 0  40px #4D4DFF,
+    0 0  50px #4D4DFF;
+}
+
+#main_content, #main_colors,
+#inspiration, #inspiration_colors,
+#neon_colors, #example {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+#main_colors, #inspiration_colors, #neon_colors {
+  overflow: auto;
+  padding-bottom: 30px;
+}
+
+#inspiration_colors .palette {
+  margin: 0 30px;
+}
+
+#inspiration_colors #proportional_palette {
+  float: left;
+  width: 260px;
+}
+
+#inspiration_colors #hex_inspiration_palette {
+  float: right;
+  width: 580px;
+}
+
+#inspiration_colors #hex_inspiration_palette table {
+  width: 100%;
+}
+
+.palette table {
+  border-collapse: collapse;
+}
+
+.palette table tr {
+  border: 5px solid #120D1E;
+}
+
+.palette table th, .palette table td {
+  padding: 10px;
+}
+
+#neon_colors .palette {
+  margin: 0 30px;
+}
+
+#example {
+}
+
+#example form {
+}
+
+#example form fieldset {
+  /* a crosshair looks more tron-y */
+  cursor: crosshair;
+  color: rgba(21,171,195,1.0);
+  font-family: "Bitstream Vera Sans Mono", monospace;
+  /* give all text a cold glow */
+  text-shadow: 0 0 5px rgba(21,171,195,0.7);
+
+  background: black;
+  margin: 10px auto;
+  padding: 30px 60px;
+  border: 5px double rgba(21,171,195,1.0);
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width: 830px;
+}
+
+#example form fieldset legend,
+#example form fieldset input[type="submit"] {
+  background: rgba(21,171,195,1.0);
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+#example form fieldset p {
+  margin:  0;
+  padding: 0;
+}
+
+#example form fieldset label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#example form fieldset label:after {
+  content: ":";
+}
+
+#example form fieldset input,
+#example form fieldset textarea {
+  outline: none;
+  display: block;
+  background: black;
+  color: rgba(21,171,195,1.0);
+  font-family: "Bitstream Vera Sans Mono", monospace;
+  /* give all text a cold glow */
+  text-shadow: 0 0 5px rgba(21,171,195,0.7);
+
+  width: 798px;
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid rgba(21,171,195,1.0);
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+#example form fieldset textarea {
+  overflow: auto;
+  line-height: 20px;
+  height:     100px;
+}
+
+#example form fieldset    input:invalid,
+#example form fieldset textarea:invalid {
+  color: red;
+  border-color: red;
+  box-shadow: 0 0 9px rgba(255,0,0,1.0);
+}
+
+#example form fieldset    input:hover,
+#example form fieldset textarea:hover,
+#example form fieldset    input:focus,
+#example form fieldset textarea:focus {
+  border: 1px solid #15ABC3;
+  -moz-box-shadow: 0 0 9px rgba(21,171,195,1.0);
+  -webkit-box-shadow: 0 0 9px rgba(21,171,195,1.0);
+  box-shadow: 0 0 9px rgba(21,171,195,1.0);
+}
+
+#example form fieldset.actions {
+  text-align: right;
+}
+
+#example form fieldset.actions legend {
+  display: none;
+}
+
+#example form fieldset.actions input {
+  width: 260px;
+  display: inline;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#example form fieldset.actions input:hover {
+  border: 1px solid #52D7EC;
+  box-shadow: 0 0 7px #52D7EC;
+}
+
+#example form fieldset.actions input[type="submit"] {
+  background-color: #15ABC3;
+  border: 1px solid #15ABC3;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #15ABC3;
+  color: rgba(0, 0, 0, 0.698);
+}
+
+#example form fieldset.actions input[type="submit"]:hover {
+  background-color: #52D7EC;
+}
